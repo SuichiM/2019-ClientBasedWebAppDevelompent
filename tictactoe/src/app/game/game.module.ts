@@ -6,12 +6,13 @@ import { BoardComponent } from './board/board.component';
 import { SquareComponent } from './square/square.component';
 
 import {StateService} from './state.service';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   exports:[
     GameComponent
   ],
-  declarations: [GameComponent, HeaderComponent, BoardComponent, SquareComponent],
+  declarations: [GameComponent, HeaderComponent, BoardComponent, SquareComponent, FooterComponent],
   imports: [
     CommonModule
   ],

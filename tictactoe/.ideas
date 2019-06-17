@@ -4,7 +4,10 @@
 
 
 steps
-
 1. en el modulo ppal de la app hay que incluir e importar el modulo Game app.module.ts
-
 2. para ello es necesario exportar el modulo game/game.module.ts 
+
+creando header y board components
+
+1. ng generate component game/header
+2. ng generate component game/board

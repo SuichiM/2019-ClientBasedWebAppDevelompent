@@ -5,6 +5,8 @@ import { HeaderComponent } from './header/header.component';
 import { BoardComponent } from './board/board.component';
 import { SquareComponent } from './square/square.component';
 
+import {StateService} from './state.service';
+
 @NgModule({
   exports:[
     GameComponent
@@ -12,6 +14,7 @@ import { SquareComponent } from './square/square.component';
   declarations: [GameComponent, HeaderComponent, BoardComponent, SquareComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  providers:[StateService]
 })
 export class GameModule { }

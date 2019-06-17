@@ -1,3 +1,3 @@
 <p>
-  Turn of Player 1 - Xs
+  Turn of {{ (_stSrv.state$ | async).turn == 'PLAYERX' ? "Player 1 - Xs" : "Player 2 - 0s" }}
 </p>

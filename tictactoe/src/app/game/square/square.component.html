@@ -1,5 +1,7 @@
 <button 
 [class.clickable]="_stSrv.state.values[row][column] === '-'"
-[class.no-clickable]="_stSrv.state.values[row][column] !== '-'" 
+[class.no-clickable]="_stSrv.state.values[row][column] !== '-'"
+[class.playerX]="_stSrv.state.values[row][column] === 'X'"
+[class.player0]="_stSrv.state.values[row][column] === '0'"
 (click)="_handleSquareClick()"> {{ (_stSrv.state$ | async).values[row][column] }} 
 </button>

@@ -12,3 +12,11 @@ button {
 .no-clickable {
 	cursor: not-allowed;
 }
+
+.playerX {
+    color: #9ac72f ;
+}
+
+.player0 {
+   color: #fc7900;
+}

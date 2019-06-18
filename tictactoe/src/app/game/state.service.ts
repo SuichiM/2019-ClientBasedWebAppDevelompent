@@ -5,7 +5,8 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 export interface State {
   turn:string,
   values: string[][],
-  movements: number
+  movements: number,
+  finalResult :string
 }
 
 @Injectable({
@@ -25,7 +26,8 @@ export class StateService {
           ['-','-','-'],
           ['-','-','-']
         ],
-        movements: 0
+        movements: 0,
+        finalResult : null
       };
   
       this._state$ = new BehaviorSubject(initialState);
@@ -64,7 +66,8 @@ export class StateService {
           ['-','-','-'],
           ['-','-','-']
         ],
-        movements:0
+        movements:0,
+        finalResult : null
       };
     }
   

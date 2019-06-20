@@ -47,6 +47,7 @@ export class StateService {
     }
     
     updateValue(row, col) {
+
       if(this.state.values[row][col] === '-') {
         let newValue = this.state.turn === 'PLAYERX' ? 'X' : '0';
         let newTurn = this.state.turn === 'PLAYERX' ? 'PLAYER0' : 'PLAYERX';
@@ -55,8 +56,10 @@ export class StateService {
         this.state.movements++;
         this._state$.next(this.state);
       }
+
+      this._checkStatus(row, col);
+
     }
-  
     
     reset() {
       this.state = {
@@ -71,4 +74,9 @@ export class StateService {
       };
     }
   
+    private _checkStatus(_row, _col){
+
+      
+    }
+
   }

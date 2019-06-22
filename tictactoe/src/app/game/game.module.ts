@@ -8,13 +8,17 @@ import { SquareComponent } from './square/square.component';
 import {StateService} from './state.service';
 import { FooterComponent } from './footer/footer.component';
 
+import {FormsModule} from '@angular/forms';
+
+
 @NgModule({
   exports:[
     GameComponent
   ],
   declarations: [GameComponent, HeaderComponent, BoardComponent, SquareComponent, FooterComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers:[StateService]
 })

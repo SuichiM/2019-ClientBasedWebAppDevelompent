@@ -6,7 +6,9 @@ export interface State {
   turn:string,
   values: string[][],
   movements: number,
-  finalResult :string
+  finalResult :string,
+  player_name: string,
+  // player0:string
 }
 
 @Injectable({
@@ -20,14 +22,16 @@ export class StateService {
     constructor() { 
   
       let initialState = {
-        turn: 'PLAYERX',
+        turn: 'playerX',
         values: [
           ['-','-','-'],
           ['-','-','-'],
           ['-','-','-']
         ],
         movements: 0,
-        finalResult : null
+        finalResult : null,
+        player_name: null,
+       // player0: 'Trump'
       };
   
       this._state$ = new BehaviorSubject(initialState);
@@ -49,8 +53,8 @@ export class StateService {
     updateValue(row, col) {
 
       if(this.state.values[row][col] === '-') {
-        let newValue = this.state.turn === 'PLAYERX' ? 'X' : '0';
-        let newTurn = this.state.turn === 'PLAYERX' ? 'PLAYER0' : 'PLAYERX';
+        let newValue = this.state.turn === 'playerX' ? 'X' : '0';
+        let newTurn = this.state.turn === 'playerX' ? 'player0' : 'playerX';
         this.state.values[row][col] = newValue;
         this.state.turn = newTurn;
         this.state.movements++;
@@ -70,7 +74,9 @@ export class StateService {
           ['-','-','-']
         ],
         movements:0,
-        finalResult : null
+        finalResult : null,
+        player_name: null,
+        //player0: 'Trump'
       };
     }
   

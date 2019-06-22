@@ -8,7 +8,9 @@ import { IndexComponent } from './index/index.component';
 import { GameComponent } from './game/game/game.component';
 import {RouterModule, Routes} from '@angular/router';
 
-const appRoutes : Routes = 
+import {HttpClientModule} from '@angular/common/http';
+
+const appRoutes : Routes =
 [{
   path: 'index',
   component: IndexComponent
@@ -37,7 +39,8 @@ const appRoutes : Routes =
     BrowserModule,
     AppRoutingModule,
     GameModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

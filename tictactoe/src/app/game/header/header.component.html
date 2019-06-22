@@ -1,3 +1,8 @@
-<p>
-  Turn of {{ (_stSrv.state$ | async).turn == 'PLAYERX' ? "Player 1 - Xs" : "Player 2 - 0s" }}
-</p>
+<header>
+  <h3> Welcome {{ (_stSrv.state$ | async).player_name }}</h3>
+  
+  <h3>
+    Turn of {{ (_stSrv.state$ | async).turn == 'playerX' ? "Player 1 - Xs" : "Player 2 - 0s" }}
+  </h3>
+    
+</header>

@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {StateService, State} from './../state.service'
 
+import {ClientHttpService} from './../../client-http.service';
+
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -10,19 +12,21 @@ import {StateService, State} from './../state.service'
 })
 export class GameComponent implements OnInit {
 
-  constructor(route:ActivatedRoute, stateService:StateService) { 
+  private _status:string = 'fetching';
+
+  constructor(route:ActivatedRoute, stateService:StateService, clientHttp: ClientHttpService) { 
     if(route.snapshot.data.continue){
 
-      stateService.state = {
-        turn: "PLAYER0",
-        values:[['X', 'X','-'],
-                ['X', '0', 'X'],
-                ['-','-', '-']],
-        movements:5,
-        finalResult: null
-      }
+      clientHttp.getSavedGame().subscribe((state:State)=>{
+          stateService.state=state;
+          this._status = 'success';
+        }, error =>{
+        this._status = error.statusText;
+      });
+
     } else{
         stateService.reset();
+        this._status = 'success';
     }
 
   }

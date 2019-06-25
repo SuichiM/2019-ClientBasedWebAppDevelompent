@@ -20,4 +20,10 @@ export class FooterComponent implements OnInit {
   _resetGameClick(){
     this._stSrv.reset();
   }
+
+  _saveGameClick(){
+    alert('cambiando a guardando');
+    this._stSrv.state.status = 'saving';
+  }
+
 }

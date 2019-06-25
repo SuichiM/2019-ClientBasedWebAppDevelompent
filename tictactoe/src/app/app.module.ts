@@ -6,9 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { GameComponent } from './game/game/game.component';
+import { SavedGamesComponent } from './saved-game/saved-games/saved-games.component';
 import {RouterModule, Routes} from '@angular/router';
 
 import {HttpClientModule} from '@angular/common/http';
+
 
 const appRoutes : Routes =
 [{
@@ -25,6 +27,10 @@ const appRoutes : Routes =
   data: {continue: true}
 },
 {
+  path: 'savedGames',
+  component: SavedGamesComponent
+},
+{
   path: '',
   redirectTo:'/index',
   pathMatch:'full'
@@ -33,7 +39,8 @@ const appRoutes : Routes =
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent
+    IndexComponent,
+    SavedGamesComponent
   ],
   imports: [
     BrowserModule,

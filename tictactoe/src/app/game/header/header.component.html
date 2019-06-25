@@ -2,6 +2,10 @@
   <h3> Welcome {{ (_stSrv.state$ | async).player_name }}</h3>
   
   <h3>
+      You're playing the game: <b>{{ (_stSrv.state$ | async).game_name}}</b>
+  </h3>
+
+  <h3>
     Turn of {{ (_stSrv.state$ | async).turn == 'playerX' ? "Player 1 - Xs" : "Player 2 - 0s" }}
   </h3>
     

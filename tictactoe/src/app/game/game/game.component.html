@@ -12,8 +12,13 @@
             <app-board></app-board>
             <app-footer></app-footer>
         </div>
-
 </div>
+
+<form *ngIf="(_stateService.state$ | async).status == 'saving'">
+        <label>Introduce game name</label>
+        <input [(ngModel)]='_game_name' type="text" name="_game_name">
+        <input type="button" (click)="_handleSaveClick()" type="submit" value="Submit">
+</form>
 
 <div *ngIf="_status != 'success' && _status != 'fetching'">
     There is an error in the backend communication. Error: {{_status}}

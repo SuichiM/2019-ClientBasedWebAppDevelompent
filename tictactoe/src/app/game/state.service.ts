@@ -8,6 +8,8 @@ export interface State {
   movements: number,
   finalResult :string,
   player_name: string,
+  game_name: string,
+  status :string
   // player0:string
 }
 
@@ -18,10 +20,18 @@ export interface State {
 export class StateService {
 
     private _state$: BehaviorSubject<State>;
-  
+
+    private _initialState;
+
+    private _checkStatus(_row, _col){
+
+      
+    }
+
+
     constructor() { 
   
-      let initialState = {
+      this._initialState = {
         turn: 'playerX',
         values: [
           ['-','-','-'],
@@ -31,10 +41,12 @@ export class StateService {
         movements: 0,
         finalResult : null,
         player_name: null,
+        game_name: 'No Saved Game',
+        status : 'new'
        // player0: 'Trump'
       };
   
-      this._state$ = new BehaviorSubject(initialState);
+      this._state$ = new BehaviorSubject(this._initialState);
   
     }
   
@@ -66,23 +78,7 @@ export class StateService {
     }
     
     reset() {
-      this.state = {
-        turn: 'PLAYERX',
-        values: [
-          ['-','-','-'],
-          ['-','-','-'],
-          ['-','-','-']
-        ],
-        movements:0,
-        finalResult : null,
-        player_name: null,
-        //player0: 'Trump'
-      };
+      this.state = this._initialState;
     }
-  
-    private _checkStatus(_row, _col){
-
-      
-    }
-
+    
   }

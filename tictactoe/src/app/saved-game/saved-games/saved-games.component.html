@@ -1,7 +1,0 @@
-  <ul>
-      <li *ngFor="let item of _listGames; let i = index">
-        {{i}} {{item.name}}  => {{item.url}}      
-        <button (click)="_handleContinueButton(item.name, item.url)"> Continue Game!</button>
-        <button (click)="_handleDeleteButton(item.name, item.url)"> Delete Game!</button>
-      </li>
-    </ul>
